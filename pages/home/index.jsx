@@ -10,12 +10,11 @@ export default function Home({ data }) {
     );
 }
 
-export async function getServerSideProps() {
-    // Fetch data from external API
-    const res = await fetch(`https://raw.githubusercontent.com/shahali007/portfolios/master/works.js`);
+Home.getInitialProps = async (ctx) => {
+    const res = await fetch('https://raw.githubusercontent.com/shahali007/portfolios/master/works.js')
     const data = await res.json();
     console.log(data);
 
     // Pass data to the page via props
     return { props: { data } };
-}
+  }
