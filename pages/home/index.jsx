@@ -16,5 +16,5 @@ Home.getInitialProps = async (ctx) => {
     console.log(data);
 
     // Pass data to the page via props
-    return { props: { data } };
+    return { data: { data } };
   }
