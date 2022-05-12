@@ -3,7 +3,7 @@ import React from "react";
 export default function Home({ data }) {
     return (
         <ol>
-            {data.map((post, index) => (
+            {data && data.length > 0 && data.map((post, index) => (
                 <li key={index}>{post.name}</li>
             ))}
         </ol>
